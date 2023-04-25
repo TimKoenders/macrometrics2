@@ -1,0 +1,106 @@
+---
+title: '**Advanced Macroeconometrics -- Assignment 2**'
+author: 
+  - "Elisabeth Fidrmuc"
+  - "Miriam Frauenlob"
+  - "Tim Koenders"
+date: "April 25, 2023"
+output: 
+  pdf_document:
+    toc: true
+    includes:
+      in_header: !expr file.path(rprojroot::find_rstudio_root_file(), "helper", "wrap_code.tex")
+header-includes: \usepackage{tcolorbox}
+papersize: a4
+geometry: margin = 2cm
+urlcolor: Mahogany
+---
+
+```{r setup, include=FALSE}
+
+set.seed 123
+
+```
+
+Question 1.
+
+```{r setup, include=FALSE}
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Define parameters
+mu <- 5
+sigma <- 9
+n <- 100
+
+# Generate data
+x <- rnorm(n, mean = mu, sd = sigma)
+
+# Compute estimates of the mean with the first 1, ..., n draws
+estimates <- cumsum(x) / seq_along(x)
+
+# Plot estimates
+plot(estimates, type = "l", col = "blue", xlab = "Sample size", ylab = "Estimate of the mean")
+
+# Add true mean as a horizontal line
+abline(h = mu, col = "red")
+
+
+```
+The plot shows that as the sample size increases, the estimates of the mean become more accurate and converge to the true mean. At the beginning, the estimates may deviate substantially from the true mean, but as the sample size grows, the estimates become more stable and approach the true mean.
+
+
+```{r setup, include=FALSE}
+
+# set seed
+set.seed(123)
+
+# Define parameters
+mu <- 0
+sigma <- 1
+n <- 1000
+
+# Generate two random samples from a standard normal distribution
+x <- rnorm(n, mean = mu, sd = sigma)
+y <- rnorm(n, mean = mu, sd = sigma)
+
+# Convert the standard normal samples to a Cauchy distribution with scale one
+z <- x / y
+
+# Compute estimates of the mean with the first 1, ..., n draws
+estimates <- cumsum(z) / seq_along(z)
+
+# Plot estimates
+plot(estimates, type = "l", col = "blue", xlab = "Sample size", ylab = "Estimate of the mean")
+
+# Add true mean as a horizontal line
+abline(h = mu, col = "red")
+
+```
+
+The Cauchy distribution does not have a well-defined mean and variance, as its probability density function has "heavy tails" that extend to infinity in both directions. This means that the distribution does not converge to a particular value as the sample size increases.
+
+
+Question 2
+
+Please refer to the appendix.
+
+
+Question 3
+
+```{r setup, include=FALSE}
+
+# Question 3
+
+simulate_data <- function(n, k, alpha, beta, sigma) {
+  X <- matrix(rnorm(n * k, mean = 0, sd = 1), n, k)
+  epsilon <- rnorm(n, mean = 0, sd = sigma)
+  y <- alpha + X %*% beta + epsilon
+  return(list(X = X, y = y))
+}
+
+
+
+
+```

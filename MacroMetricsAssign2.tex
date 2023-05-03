@@ -1,20 +1,36 @@
+\documentclass{article}
+\usepackage[margin = 1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{tcolorbox}
+\usepackage{latex-rmd}
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Log}{\log}
+\renewcommand{\log}{\:\mathrm{log}\:}
+\renewcommand\thesubsection{\thesection.\alph{subsection}}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\title{Advanced Macroeconometrics - Assignment 2}
+\author{Miriam Frauenlob, Elisabeth Fidrmuc, Tim Koenders }
+\date{May 2023}
+
+\begin{document}
 
 \maketitle
 
-{
-\hypersetup{linkcolor=}
-\setcounter{tocdepth}{2}
-\tableofcontents
-}
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{knitr}\SpecialCharTok{::}\NormalTok{opts\_chunk}\SpecialCharTok{$}\FunctionTok{set}\NormalTok{(}\AttributeTok{fig.width=}\DecValTok{12}\NormalTok{, }\AttributeTok{fig.height=}\DecValTok{8}\NormalTok{, }\AttributeTok{fig\_path=}\StringTok{\textquotesingle{}figures/\textquotesingle{}}\NormalTok{,}\AttributeTok{echo=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{warning=}\ConstantTok{FALSE}\NormalTok{, }\AttributeTok{message=}\ConstantTok{FALSE}\NormalTok{)}
+\vspace{2em}
 
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\begin{tcolorbox}
+\centering \itshape The executable code that was used in compiling the assignment is available on GitHub at \href{https://github.com/TimKoenders/macrometrics2}{https://github.com/TimKoenders/macrometrics2}.
+\end{tcolorbox}
 
-Question 1.
+\newpage
+
+
+\section*{Question 1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -47,6 +63,9 @@ mean become more accurate and converge to the true mean. At the
 beginning, the estimates may deviate substantially from the true mean,
 but as the sample size grows, the estimates become more stable and
 approach the true mean.
+
+\newpage
+
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -82,7 +101,12 @@ as its probability density function has ``heavy tails'' that extend to
 infinity in both directions. This means that the distribution does not
 converge to a particular value as the sample size increases.
 
-Question 3
+\section*{Question 2}
+
+\newpage
+
+
+\section*{Question 3}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -100,4 +124,9 @@ Question 3
 \end{Shaded}
 
 
+
 \end{document}
+
+
+
+

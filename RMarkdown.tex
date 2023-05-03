@@ -124,6 +124,8 @@
 }
 \begin{Shaded}
 \begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\NormalTok{opts\_chunk}\SpecialCharTok{$}\FunctionTok{set}\NormalTok{(}\AttributeTok{fig.width=}\DecValTok{12}\NormalTok{, }\AttributeTok{fig.height=}\DecValTok{8}\NormalTok{, }\AttributeTok{fig\_path=}\StringTok{\textquotesingle{}figures/\textquotesingle{}}\NormalTok{,}\AttributeTok{echo=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{warning=}\ConstantTok{FALSE}\NormalTok{, }\AttributeTok{message=}\ConstantTok{FALSE}\NormalTok{)}
+
 \FunctionTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -132,6 +134,9 @@ Question 1.
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\NormalTok{opts\_chunk}\SpecialCharTok{$}\FunctionTok{set}\NormalTok{(}\AttributeTok{fig.width=}\DecValTok{12}\NormalTok{, }\AttributeTok{fig.height=}\DecValTok{8}\NormalTok{, }\AttributeTok{fig\_path=}\StringTok{\textquotesingle{}figures/\textquotesingle{}}\NormalTok{,}\AttributeTok{echo=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{warning=}\ConstantTok{FALSE}\NormalTok{, }\AttributeTok{message=}\ConstantTok{FALSE}\NormalTok{)}
+
+
 \CommentTok{\# Define parameters}
 \NormalTok{mu }\OtherTok{\textless{}{-}} \DecValTok{5}
 \NormalTok{sigma }\OtherTok{\textless{}{-}} \DecValTok{9}
@@ -151,7 +156,7 @@ Question 1.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{RMarkdown_files/figure-latex/two-1.pdf}
+\includegraphics{RMarkdown_files/figure-latex/global_options2-1.pdf}
 
 The plot shows that as the sample size increases, the estimates of the
 mean become more accurate and converge to the true mean. At the
@@ -161,6 +166,8 @@ approach the true mean.
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\NormalTok{opts\_chunk}\SpecialCharTok{$}\FunctionTok{set}\NormalTok{(}\AttributeTok{fig.width=}\DecValTok{12}\NormalTok{, }\AttributeTok{fig.height=}\DecValTok{8}\NormalTok{, }\AttributeTok{fig\_path=}\StringTok{\textquotesingle{}figures/\textquotesingle{}}\NormalTok{,}\AttributeTok{echo=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{warning=}\ConstantTok{FALSE}\NormalTok{, }\AttributeTok{message=}\ConstantTok{FALSE}\NormalTok{)}
+
 \CommentTok{\# Define parameters}
 \NormalTok{mu }\OtherTok{\textless{}{-}} \DecValTok{0}
 \NormalTok{sigma }\OtherTok{\textless{}{-}} \DecValTok{1}
@@ -184,7 +191,7 @@ approach the true mean.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{RMarkdown_files/figure-latex/three-1.pdf}
+\includegraphics{RMarkdown_files/figure-latex/global_options3-1.pdf}
 
 The Cauchy distribution does not have a well-defined mean and variance,
 as its probability density function has ``heavy tails'' that extend to
@@ -195,6 +202,8 @@ Question 3
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\NormalTok{opts\_chunk}\SpecialCharTok{$}\FunctionTok{set}\NormalTok{(}\AttributeTok{fig.width=}\DecValTok{12}\NormalTok{, }\AttributeTok{fig.height=}\DecValTok{8}\NormalTok{, }\AttributeTok{fig\_path=}\StringTok{\textquotesingle{}figures/\textquotesingle{}}\NormalTok{,}\AttributeTok{echo=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{warning=}\ConstantTok{FALSE}\NormalTok{, }\AttributeTok{message=}\ConstantTok{FALSE}\NormalTok{)}
+
 \CommentTok{\# Question 3}
 
 \NormalTok{simulate\_data }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(n, k, alpha, beta, sigma) \{}

@@ -48,6 +48,7 @@ abline(h = mu, col = "red")
 
 
 ```
+
 The plot shows that as the sample size increases, the estimates of the mean become more accurate and converge to the true mean. At the beginning, the estimates may deviate substantially from the true mean, but as the sample size grows, the estimates become more stable and approach the true mean.
 
 
@@ -80,11 +81,6 @@ abline(h = mu, col = "red")
 ```
 
 The Cauchy distribution does not have a well-defined mean and variance, as its probability density function has "heavy tails" that extend to infinity in both directions. This means that the distribution does not converge to a particular value as the sample size increases.
-
-
-Question 2
-
-Please refer to the appendix.
 
 
 Question 3

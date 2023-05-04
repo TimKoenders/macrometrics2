@@ -4,20 +4,19 @@ author:
   - "Elisabeth Fidrmuc"
   - "Miriam Frauenlob"
   - "Tim Koenders"
-date: "April 25, 2023"
+date: "May, 2023"
 output: 
   pdf_document: 
     toc: yes
     keep_tex: yes
-    includes:
-      in_header: file.path(rprojroot::find_rstudio_root_file(), "helper", "wrap_code.tex")
 header-includes: \usepackage{tcolorbox}
 papersize: a4
 geometry: margin = 2cm
 urlcolor: Mahogany
 ---
 
-```{r setup, include=FALSE}
+```{r global_options1, include=TRUE}
+knitr::opts_chunk$set(fig.width=12, fig.height=8, fig_path='figures/',echo=TRUE, warning=FALSE, message=FALSE)
 
 set.seed(123)
 
@@ -25,10 +24,9 @@ set.seed(123)
 
 Question 1.
 
-```{r setup, include=FALSE}
+```{r global_options2, include=TRUE}
+knitr::opts_chunk$set(fig.width=12, fig.height=8, fig_path='figures/',echo=TRUE, warning=FALSE, message=FALSE)
 
-# Set seed for reproducibility
-set.seed(123)
 
 # Define parameters
 mu <- 5
@@ -53,10 +51,8 @@ abline(h = mu, col = "red")
 The plot shows that as the sample size increases, the estimates of the mean become more accurate and converge to the true mean. At the beginning, the estimates may deviate substantially from the true mean, but as the sample size grows, the estimates become more stable and approach the true mean.
 
 
-```{r setup, include=FALSE}
-
-# set seed
-set.seed(123)
+```{r global_options3, include=TRUE}
+knitr::opts_chunk$set(fig.width=12, fig.height=8, fig_path='figures/',echo=TRUE, warning=FALSE, message=FALSE)
 
 # Define parameters
 mu <- 0
@@ -86,18 +82,47 @@ The Cauchy distribution does not have a well-defined mean and variance, as its p
 
 Question 3
 
-```{r setup, include=FALSE}
+```{r global_options4, include=TRUE}
+knitr::opts_chunk$set(fig.width=12, fig.height=8, fig_path='figures/',echo=TRUE, warning=FALSE, message=FALSE)
 
-# Question 3
-
-simulate_data <- function(n, k, alpha, beta, sigma) {
+# Creating function
+sim_linear_model <- function(n, k, alpha, beta, sigma) {
   X <- matrix(rnorm(n * k, mean = 0, sd = 1), n, k)
+  x <- X[,1]
   epsilon <- rnorm(n, mean = 0, sd = sigma)
   y <- alpha + X %*% beta + epsilon
-  return(list(X = X, y = y))
+  return(list(x = x, y = y))
+  
 }
 
+# Create scatterplot with regression line
+sim_data <- sim_linear_model(n = 100, k = 1, alpha = 2, beta = 3, sigma = 1)
+plot(sim_data$x, sim_data$y, xlab = "x", ylab = "y")
+abline(lm(y ~ x, data = sim_data), col = "red")
+
+# Define numbers of simulations
+
+n_sims <- 1000
+
+# Create an empty vector to store the estimated slope coefficients
+beta_lse <- numeric(n_sims)
+
+# Loop through the simulations
+for (i in 1:n_sims) {
+  # Simulate the data
+  sim_data <- sim_linear_model(n = 100, k = 1, alpha = 2, beta = 3, sigma = 1)
+  
+  # Estimate the slope coefficient using linear regression
+  fit <- lm(sim_data$y ~ sim_data$x)
+  beta_lse[i] <- coef(fit)[2]
+}
+
+# Creating histogram
+hist(beta_lse, main = "Histogram of Beta Estimates", xlab = "Beta Estimate")
 
 
 
 ```
+The approximately normal distribution of the beta_lse estimates and its central tendency around the true value of the slope coefficient of 3 suggests that the beta estimate is consistent. . This means that as the number of simulations approaches infinity, the estimates produced by the estimator will converge to the true population value of the slope coefficient, and the distribution of estimates will become increasingly concentrated around the true value.
+
+

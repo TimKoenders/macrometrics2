@@ -41,6 +41,45 @@ plot(estimates, type = "l", col = "blue", xlab = "Sample size", ylab = "Estimate
 # Add true mean as a horizontal line
 abline(h = mu, col = "red")
 
+
+#Exercise 2
+
+theta <- seq(0,1,length=1000)
+plot(theta, dbeta(theta, 1,1), col="lightblue", lwd=2,
+     type="l", ylab="density", xlab="theta", main="Prior", ylim=c(0,20))
+lines(theta, dbeta(theta, 20,2), col="coral", lwd=2)
+lines(theta, dbeta(theta, 2,20), col="lightgreen", lwd=2)
+lines(theta, dbeta(theta, 50,50), col="pink", lwd=2)
+legend("topright", c("a0=b0=1", "a0=20, b0=2", "a0=2, b0=20", "a0=b0=50"),
+       lwd=c(2,2,2), col=c("lightblue", "coral", "lightgreen", "pink"))
+
+
+plot(theta, dbeta(theta, 1+10,1+20), type="l", col="lightblue", lwd=2,
+     ylab="density", xlab="theta", main="Posterior",ylim=c(0,10))
+lines(theta, dbeta(theta, 20+10,2+20), col="coral", lwd=2)
+lines(theta, dbeta(theta, 2+10,20+20), col="lightgreen", lwd=2)
+lines(theta, dbeta(theta, 50+10,50+20), col="pink", lwd=2)
+legend("topright", c("a0=b0=1", "a0=20, b0=2", "a0=2, b0=20", "a0=b0=50"),
+       lwd=c(2,2,2), col=c("lightblue", "coral", "lightgreen", "pink"))
+theta <- seq(0,1,length=1000)
+plot(theta, dbeta(theta, 1,1), col="lightblue", lwd=2,
+     type="l", ylab="density", xlab="theta", main="Prior", ylim=c(0,20))
+lines(theta, dbeta(theta, 1,2), col="coral", lwd=2)
+lines(theta, dbeta(theta, 2,1), col="lightgreen", lwd=2)
+lines(theta, dbeta(theta, 2,2), col="pink", lwd=2)
+legend("topright", c("a0=b0=1", "a0=20, b0=2", "a0=2, b0=20", "a0=b0=50"),
+       lwd=c(2,2,2), col=c("lightblue", "coral", "lightgreen", "pink"))
+
+plot(theta, dbeta(theta, 1+10,1+20), type="l", col="lightblue", lwd=2,
+     ylab="density", xlab="theta", main="Posterior",ylim=c(0,10))
+lines(theta, dbeta(theta, 1+10,2+20), col="coral", lwd=2)
+lines(theta, dbeta(theta, 2+10,1+20), col="lightgreen", lwd=2)
+lines(theta, dbeta(theta, 2+10,2+20), col="pink", lwd=2)
+legend("topright", c("a0=b0=1", "a0=1, b0=2", "a0=2, b0=1", "a0=b0=2"),
+       lwd=c(2,2,2), col=c("lightblue", "coral", "lightgreen", "pink"))
+
+
+
 # Question 3
 
 simulate_data <- function(n, k, alpha, beta, sigma) {
@@ -129,3 +168,48 @@ for (n in c(50, 100, 200)) {
   plot(x_grid, post_dens, type = "l", lwd = 2, main = paste0("Posterior Density (n = ", n, ")"))
   
 }
+
+#Question 4
+
+n <- 10000
+set.seed(202020)
+prior1 <- rnorm(n)
+prior2 <- rnorm(n,mean=2,sd=1/2)
+
+par(mfrow=c(1,2))
+hist(prior1,xlab="First Prior",col="lightblue",main="N(0,1)")
+hist(prior2,xlab="Second Prior",col="coral",main="N(2,0.5)")
+
+
+set.seed(1234)
+prior1 <- rgamma(10000,shape=0.5,rate=0.01)
+prior2 <- rgamma(10000,shape=0.5,rate=1)
+prior3 <- rgamma(10000,shape=0.5,rate=100)
+
+plot(density(prior1),col="lightblue",xlim=c(0,250),lwd=2,main="Prior Density")
+lines(density(prior2), col = "coral",lwd=2)
+lines(density(prior3), col = "lightgreen",lwd=2)
+legend("topright", c("n=0.01", "n=1", "n=100"),
+       col =c("lightblue","coral","lightgreen"), lwd=2)
+
+
+
+prior_eta <- rgamma(10000,shape=5,rate=5)
+#prior_variance <- 1/rgamma(10000,shape=0.5,rate=prior_eta)
+prior_variance <- rgamma(10000,shape=0.5,rate=prior_eta)
+plot(density(prior_variance),main="Hyperprior from G(5,5)",col="lightblue",lwd=2,xlim=c(0,4))
+
+
+eta_draws = rgamma(1e4, shape = 0.1, rate = 0.1)
+var_draws = 1/rgamma(1e4, shape = 0.5, rate = eta_draws)
+var_draws = var_draws[var_draws <= 1e3]
+plot(density(var_draws),xlim=c(-1,20))
+
+set.seed(55555555)
+prior_eta <- rgamma(10000,shape=5,rate=5)
+#prior_variance <- 1/rgamma(10000,shape=0.5,rate=prior_eta)
+prior_variance <- rgamma(10000,shape=0.5,rate=prior_eta)
+plot(density(prior_variance),main="Hyperprior from G(5,5)",col="lightblue",lwd=2,xlim=c(0,4))
+
+
+

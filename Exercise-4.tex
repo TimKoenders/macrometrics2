@@ -1,0 +1,286 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Macroeconometrics HW2 Exercise 4},
+  pdfauthor={Elisabeth Fidrmuc},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Macroeconometrics HW2 Exercise 4}
+\author{Elisabeth Fidrmuc}
+\date{5 5 2023}
+
+\begin{document}
+\maketitle
+
+Exercise 1
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{12345}\NormalTok{)}
+\NormalTok{draws1 }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(}\AttributeTok{n=}\DecValTok{100}\NormalTok{,}\AttributeTok{mean=}\DecValTok{5}\NormalTok{,}\AttributeTok{sd=}\DecValTok{9}\NormalTok{)}
+\NormalTok{conv1 }\OtherTok{\textless{}{-}} \FunctionTok{cumsum}\NormalTok{(draws1)}\SpecialCharTok{/}\DecValTok{1}\SpecialCharTok{:}\DecValTok{100}
+
+\NormalTok{draws2 }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{10000}\NormalTok{,}\AttributeTok{mean=}\DecValTok{0}\NormalTok{,}\AttributeTok{sd=}\DecValTok{1}\NormalTok{)}\SpecialCharTok{/}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{10000}\NormalTok{,}\AttributeTok{mean=}\DecValTok{0}\NormalTok{,}\AttributeTok{sd=}\DecValTok{1}\NormalTok{)}
+\NormalTok{conv2 }\OtherTok{\textless{}{-}} \FunctionTok{cumsum}\NormalTok{(draws2)}\SpecialCharTok{/}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10000}
+
+\FunctionTok{plot}\NormalTok{(conv1,}\AttributeTok{type=}\StringTok{"l"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Exercise-4_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(conv2,}\AttributeTok{type=}\StringTok{"l"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Exercise-4_files/figure-latex/unnamed-chunk-1-2.pdf}
+
+Exercise 2
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{theta }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\AttributeTok{length=}\DecValTok{1000}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(theta, }\FunctionTok{dbeta}\NormalTok{(theta, }\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{), }\AttributeTok{col=}\StringTok{"lightblue"}\NormalTok{, }\AttributeTok{lwd=}\DecValTok{2}\NormalTok{,}
+\AttributeTok{type=}\StringTok{"l"}\NormalTok{, }\AttributeTok{ylab=}\StringTok{"density"}\NormalTok{, }\AttributeTok{xlab=}\StringTok{"theta"}\NormalTok{, }\AttributeTok{main=}\StringTok{"Prior"}\NormalTok{, }\AttributeTok{ylim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{20}\NormalTok{))}
+\FunctionTok{lines}\NormalTok{(theta, }\FunctionTok{dbeta}\NormalTok{(theta, }\DecValTok{20}\NormalTok{,}\DecValTok{2}\NormalTok{), }\AttributeTok{col=}\StringTok{"coral"}\NormalTok{, }\AttributeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(theta, }\FunctionTok{dbeta}\NormalTok{(theta, }\DecValTok{2}\NormalTok{,}\DecValTok{20}\NormalTok{), }\AttributeTok{col=}\StringTok{"lightgreen"}\NormalTok{, }\AttributeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(theta, }\FunctionTok{dbeta}\NormalTok{(theta, }\DecValTok{50}\NormalTok{,}\DecValTok{50}\NormalTok{), }\AttributeTok{col=}\StringTok{"pink"}\NormalTok{, }\AttributeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\FunctionTok{legend}\NormalTok{(}\StringTok{"topright"}\NormalTok{, }\FunctionTok{c}\NormalTok{(}\StringTok{"a0=b0=1"}\NormalTok{, }\StringTok{"a0=20, b0=2"}\NormalTok{, }\StringTok{"a0=2, b0=20"}\NormalTok{, }\StringTok{"a0=b0=50"}\NormalTok{),}
+\AttributeTok{lwd=}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{), }\AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"lightblue"}\NormalTok{, }\StringTok{"coral"}\NormalTok{, }\StringTok{"lightgreen"}\NormalTok{, }\StringTok{"pink"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Exercise-4_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(theta, }\FunctionTok{dbeta}\NormalTok{(theta, }\DecValTok{1}\SpecialCharTok{+}\DecValTok{10}\NormalTok{,}\DecValTok{1}\SpecialCharTok{+}\DecValTok{20}\NormalTok{), }\AttributeTok{type=}\StringTok{"l"}\NormalTok{, }\AttributeTok{col=}\StringTok{"lightblue"}\NormalTok{, }\AttributeTok{lwd=}\DecValTok{2}\NormalTok{,}
+\AttributeTok{ylab=}\StringTok{"density"}\NormalTok{, }\AttributeTok{xlab=}\StringTok{"theta"}\NormalTok{, }\AttributeTok{main=}\StringTok{"Posterior"}\NormalTok{,}\AttributeTok{ylim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{10}\NormalTok{))}
+\FunctionTok{lines}\NormalTok{(theta, }\FunctionTok{dbeta}\NormalTok{(theta, }\DecValTok{20}\SpecialCharTok{+}\DecValTok{10}\NormalTok{,}\DecValTok{2}\SpecialCharTok{+}\DecValTok{20}\NormalTok{), }\AttributeTok{col=}\StringTok{"coral"}\NormalTok{, }\AttributeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(theta, }\FunctionTok{dbeta}\NormalTok{(theta, }\DecValTok{2}\SpecialCharTok{+}\DecValTok{10}\NormalTok{,}\DecValTok{20}\SpecialCharTok{+}\DecValTok{20}\NormalTok{), }\AttributeTok{col=}\StringTok{"lightgreen"}\NormalTok{, }\AttributeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(theta, }\FunctionTok{dbeta}\NormalTok{(theta, }\DecValTok{50}\SpecialCharTok{+}\DecValTok{10}\NormalTok{,}\DecValTok{50}\SpecialCharTok{+}\DecValTok{20}\NormalTok{), }\AttributeTok{col=}\StringTok{"pink"}\NormalTok{, }\AttributeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\FunctionTok{legend}\NormalTok{(}\StringTok{"topright"}\NormalTok{, }\FunctionTok{c}\NormalTok{(}\StringTok{"a0=b0=1"}\NormalTok{, }\StringTok{"a0=20, b0=2"}\NormalTok{, }\StringTok{"a0=2, b0=20"}\NormalTok{, }\StringTok{"a0=b0=50"}\NormalTok{),}
+\AttributeTok{lwd=}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{), }\AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"lightblue"}\NormalTok{, }\StringTok{"coral"}\NormalTok{, }\StringTok{"lightgreen"}\NormalTok{, }\StringTok{"pink"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Exercise-4_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{theta }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\AttributeTok{length=}\DecValTok{1000}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(theta, }\FunctionTok{dbeta}\NormalTok{(theta, }\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{), }\AttributeTok{col=}\StringTok{"lightblue"}\NormalTok{, }\AttributeTok{lwd=}\DecValTok{2}\NormalTok{,}
+\AttributeTok{type=}\StringTok{"l"}\NormalTok{, }\AttributeTok{ylab=}\StringTok{"density"}\NormalTok{, }\AttributeTok{xlab=}\StringTok{"theta"}\NormalTok{, }\AttributeTok{main=}\StringTok{"Prior"}\NormalTok{, }\AttributeTok{ylim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{20}\NormalTok{))}
+\FunctionTok{lines}\NormalTok{(theta, }\FunctionTok{dbeta}\NormalTok{(theta, }\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{), }\AttributeTok{col=}\StringTok{"coral"}\NormalTok{, }\AttributeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(theta, }\FunctionTok{dbeta}\NormalTok{(theta, }\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{), }\AttributeTok{col=}\StringTok{"lightgreen"}\NormalTok{, }\AttributeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(theta, }\FunctionTok{dbeta}\NormalTok{(theta, }\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{), }\AttributeTok{col=}\StringTok{"pink"}\NormalTok{, }\AttributeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\FunctionTok{legend}\NormalTok{(}\StringTok{"topright"}\NormalTok{, }\FunctionTok{c}\NormalTok{(}\StringTok{"a0=b0=1"}\NormalTok{, }\StringTok{"a0=20, b0=2"}\NormalTok{, }\StringTok{"a0=2, b0=20"}\NormalTok{, }\StringTok{"a0=b0=50"}\NormalTok{),}
+\AttributeTok{lwd=}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{), }\AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"lightblue"}\NormalTok{, }\StringTok{"coral"}\NormalTok{, }\StringTok{"lightgreen"}\NormalTok{, }\StringTok{"pink"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Exercise-4_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(theta, }\FunctionTok{dbeta}\NormalTok{(theta, }\DecValTok{1}\SpecialCharTok{+}\DecValTok{10}\NormalTok{,}\DecValTok{1}\SpecialCharTok{+}\DecValTok{20}\NormalTok{), }\AttributeTok{type=}\StringTok{"l"}\NormalTok{, }\AttributeTok{col=}\StringTok{"lightblue"}\NormalTok{, }\AttributeTok{lwd=}\DecValTok{2}\NormalTok{,}
+\AttributeTok{ylab=}\StringTok{"density"}\NormalTok{, }\AttributeTok{xlab=}\StringTok{"theta"}\NormalTok{, }\AttributeTok{main=}\StringTok{"Posterior"}\NormalTok{,}\AttributeTok{ylim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{10}\NormalTok{))}
+\FunctionTok{lines}\NormalTok{(theta, }\FunctionTok{dbeta}\NormalTok{(theta, }\DecValTok{1}\SpecialCharTok{+}\DecValTok{10}\NormalTok{,}\DecValTok{2}\SpecialCharTok{+}\DecValTok{20}\NormalTok{), }\AttributeTok{col=}\StringTok{"coral"}\NormalTok{, }\AttributeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(theta, }\FunctionTok{dbeta}\NormalTok{(theta, }\DecValTok{2}\SpecialCharTok{+}\DecValTok{10}\NormalTok{,}\DecValTok{1}\SpecialCharTok{+}\DecValTok{20}\NormalTok{), }\AttributeTok{col=}\StringTok{"lightgreen"}\NormalTok{, }\AttributeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(theta, }\FunctionTok{dbeta}\NormalTok{(theta, }\DecValTok{2}\SpecialCharTok{+}\DecValTok{10}\NormalTok{,}\DecValTok{2}\SpecialCharTok{+}\DecValTok{20}\NormalTok{), }\AttributeTok{col=}\StringTok{"pink"}\NormalTok{, }\AttributeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\FunctionTok{legend}\NormalTok{(}\StringTok{"topright"}\NormalTok{, }\FunctionTok{c}\NormalTok{(}\StringTok{"a0=b0=1"}\NormalTok{, }\StringTok{"a0=1, b0=2"}\NormalTok{, }\StringTok{"a0=2, b0=1"}\NormalTok{, }\StringTok{"a0=b0=2"}\NormalTok{),}
+\AttributeTok{lwd=}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{), }\AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"lightblue"}\NormalTok{, }\StringTok{"coral"}\NormalTok{, }\StringTok{"lightgreen"}\NormalTok{, }\StringTok{"pink"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Exercise-4_files/figure-latex/unnamed-chunk-4-2.pdf}
+
+Exercise 4
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{n }\OtherTok{\textless{}{-}} \DecValTok{10000}
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{202020}\NormalTok{)}
+\NormalTok{prior1 }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(n)}
+\NormalTok{prior2 }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(n,}\AttributeTok{mean=}\DecValTok{2}\NormalTok{,}\AttributeTok{sd=}\DecValTok{1}\SpecialCharTok{/}\DecValTok{2}\NormalTok{)}
+
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+\FunctionTok{hist}\NormalTok{(prior1,}\AttributeTok{xlab=}\StringTok{"First Prior"}\NormalTok{,}\AttributeTok{col=}\StringTok{"lightblue"}\NormalTok{,}\AttributeTok{main=}\StringTok{"N(0,1)"}\NormalTok{)}
+\FunctionTok{hist}\NormalTok{(prior2,}\AttributeTok{xlab=}\StringTok{"Second Prior"}\NormalTok{,}\AttributeTok{col=}\StringTok{"coral"}\NormalTok{,}\AttributeTok{main=}\StringTok{"N(2,0.5)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Exercise-4_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1234}\NormalTok{)}
+\NormalTok{prior1 }\OtherTok{\textless{}{-}} \FunctionTok{rgamma}\NormalTok{(}\DecValTok{10000}\NormalTok{,}\AttributeTok{shape=}\FloatTok{0.5}\NormalTok{,}\AttributeTok{rate=}\FloatTok{0.01}\NormalTok{)}
+\NormalTok{prior2 }\OtherTok{\textless{}{-}} \FunctionTok{rgamma}\NormalTok{(}\DecValTok{10000}\NormalTok{,}\AttributeTok{shape=}\FloatTok{0.5}\NormalTok{,}\AttributeTok{rate=}\DecValTok{1}\NormalTok{)}
+\NormalTok{prior3 }\OtherTok{\textless{}{-}} \FunctionTok{rgamma}\NormalTok{(}\DecValTok{10000}\NormalTok{,}\AttributeTok{shape=}\FloatTok{0.5}\NormalTok{,}\AttributeTok{rate=}\DecValTok{100}\NormalTok{)}
+
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{density}\NormalTok{(prior1),}\AttributeTok{col=}\StringTok{"lightblue"}\NormalTok{,}\AttributeTok{xlim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{250}\NormalTok{),}\AttributeTok{lwd=}\DecValTok{2}\NormalTok{,}\AttributeTok{main=}\StringTok{"Prior Density"}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(}\FunctionTok{density}\NormalTok{(prior2), }\AttributeTok{col =} \StringTok{"coral"}\NormalTok{,}\AttributeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(}\FunctionTok{density}\NormalTok{(prior3), }\AttributeTok{col =} \StringTok{"lightgreen"}\NormalTok{,}\AttributeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\FunctionTok{legend}\NormalTok{(}\StringTok{"topright"}\NormalTok{, }\FunctionTok{c}\NormalTok{(}\StringTok{"n=0.01"}\NormalTok{, }\StringTok{"n=1"}\NormalTok{, }\StringTok{"n=100"}\NormalTok{),}
+       \AttributeTok{col =}\FunctionTok{c}\NormalTok{(}\StringTok{"lightblue"}\NormalTok{,}\StringTok{"coral"}\NormalTok{,}\StringTok{"lightgreen"}\NormalTok{), }\AttributeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Exercise-4_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{prior\_eta }\OtherTok{\textless{}{-}} \FunctionTok{rgamma}\NormalTok{(}\DecValTok{10000}\NormalTok{,}\AttributeTok{shape=}\DecValTok{5}\NormalTok{,}\AttributeTok{rate=}\DecValTok{5}\NormalTok{)}
+\CommentTok{\#prior\_variance \textless{}{-} 1/rgamma(10000,shape=0.5,rate=prior\_eta)}
+\NormalTok{prior\_variance }\OtherTok{\textless{}{-}} \FunctionTok{rgamma}\NormalTok{(}\DecValTok{10000}\NormalTok{,}\AttributeTok{shape=}\FloatTok{0.5}\NormalTok{,}\AttributeTok{rate=}\NormalTok{prior\_eta)}
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{density}\NormalTok{(prior\_variance),}\AttributeTok{main=}\StringTok{"Hyperprior from G(5,5)"}\NormalTok{,}\AttributeTok{col=}\StringTok{"lightblue"}\NormalTok{,}\AttributeTok{lwd=}\DecValTok{2}\NormalTok{,}\AttributeTok{xlim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Exercise-4_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{eta\_draws }\OtherTok{=} \FunctionTok{rgamma}\NormalTok{(}\FloatTok{1e4}\NormalTok{, }\AttributeTok{shape =} \FloatTok{0.1}\NormalTok{, }\AttributeTok{rate =} \FloatTok{0.1}\NormalTok{)}
+\NormalTok{var\_draws }\OtherTok{=} \DecValTok{1}\SpecialCharTok{/}\FunctionTok{rgamma}\NormalTok{(}\FloatTok{1e4}\NormalTok{, }\AttributeTok{shape =} \FloatTok{0.5}\NormalTok{, }\AttributeTok{rate =}\NormalTok{ eta\_draws)}
+\NormalTok{var\_draws }\OtherTok{=}\NormalTok{ var\_draws[var\_draws }\SpecialCharTok{\textless{}=} \FloatTok{1e3}\NormalTok{]}
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{density}\NormalTok{(var\_draws),}\AttributeTok{xlim=}\FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\DecValTok{20}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Exercise-4_files/figure-latex/unnamed-chunk-7-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{55555555}\NormalTok{)}
+\NormalTok{prior\_eta }\OtherTok{\textless{}{-}} \FunctionTok{rgamma}\NormalTok{(}\DecValTok{10000}\NormalTok{,}\AttributeTok{shape=}\DecValTok{5}\NormalTok{,}\AttributeTok{rate=}\DecValTok{5}\NormalTok{)}
+\CommentTok{\#prior\_variance \textless{}{-} 1/rgamma(10000,shape=0.5,rate=prior\_eta)}
+\NormalTok{prior\_variance }\OtherTok{\textless{}{-}} \FunctionTok{rgamma}\NormalTok{(}\DecValTok{10000}\NormalTok{,}\AttributeTok{shape=}\FloatTok{0.5}\NormalTok{,}\AttributeTok{rate=}\NormalTok{prior\_eta)}
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{density}\NormalTok{(prior\_variance),}\AttributeTok{main=}\StringTok{"Hyperprior from G(5,5)"}\NormalTok{,}\AttributeTok{col=}\StringTok{"lightblue"}\NormalTok{,}\AttributeTok{lwd=}\DecValTok{2}\NormalTok{,}\AttributeTok{xlim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Exercise-4_files/figure-latex/unnamed-chunk-7-3.pdf}
+
+\end{document}
